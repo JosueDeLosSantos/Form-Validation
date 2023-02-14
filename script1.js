@@ -44,3 +44,42 @@ window.onload = () => {
   document.getElementById("Country").onchange = checkZIP;
   document.getElementById("ZIP").oninput = checkZIP;
 };
+
+/* const form = document.querySelector("form"); */
+const ZIPFieldError = document.querySelector("#ZIP + span.error1");
+const ZIPField = document.getElementById("ZIP");
+ZIPField.classList.add("bcolor");
+
+ZIPField.addEventListener("input", () => {
+  if (ZIPField.value !== "") {
+    ZIPField.classList.remove("bcolor");
+    ZIPField.classList.add("bncolor");
+  } else if (ZIPField.value === "") {
+    ZIPField.classList.remove("bncolor");
+    ZIPField.classList.add("bcolor");
+  }
+});
+
+form.addEventListener("submit", (event) => {
+  if (ZIPField.value === "") {
+    ZIPFieldError.textContent = "Please enter a ZIP code";
+    event.preventDefault();
+    return;
+  }
+
+  if (!ZIPField.checkValidity()) {
+    ZIPFieldError.textContent =
+      "Please enter a valid ZIP code from that country";
+    event.preventDefault();
+    return;
+  }
+  if (
+    ZIPField.checkValidity() &&
+    email.validity.valid &&
+    password.validity.valid &&
+    pconfirmation.value === password.value
+  ) {
+    ZIPFieldError.textContent = "";
+    document.querySelector(".finalm").innerText = "high five!";
+  }
+});

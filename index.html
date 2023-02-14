@@ -11,6 +11,9 @@
   </head>
   <body>
     <form novalidate>
+      <!--
+        https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#validating_forms_using_javascript
+      -->
       <p class="p1">
         <label for="mail">
           <span>Email:</span>
@@ -18,6 +21,10 @@
           <span class="error" aria-live="polite"></span>
         </label>
       </p>
+
+      <!--
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation
+      -->
 
       <p>
         <label for="Country">Country : </label>
@@ -28,10 +35,15 @@
           <option value="nl">The Netherlands</option>
         </select>
         <label for="ZIP">ZIP : </label>
-        <input type="text" id="ZIP" />
+        <input
+          type="text"
+          id="ZIP"
+          title="You need to enter a valid ZIP code from that country."
+        />
         <span class="error1" aria-live="polite1"></span>
       </p>
 
+      <!--https://www.w3schools.com/tags/att_pattern.asp-->
       <p class="p1">
         <label for="password">
           <span>Password:</span>
@@ -40,23 +52,27 @@
             class="password"
             name="password"
             placeholder="Enter password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and 
+            lowercase letter, and at least 8 or more characters"
             required
-            minlength="8"
           />
           <span class="error2" aria-live="polite2"></span>
           <input
             type="password"
-            class="password"
+            class="password pconfirmation"
             name="password"
             placeholder="Confirm password"
             required
-            minlength="8"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            required
           />
           <span class="error3" aria-live="polite3"></span>
         </label>
       </p>
 
       <button type="submit" value="Validate">Submit</button>
+      <div class="finalm"></div>
     </form>
   </body>
 </html>
