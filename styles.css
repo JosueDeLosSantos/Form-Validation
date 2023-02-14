@@ -1,0 +1,104 @@
+body {
+  font: 1em sans-serif;
+  width: 200px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.p1 * {
+  display: block;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  appearance: none;
+
+  width: 100%;
+  border: 1px solid #333;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 90%;
+
+  box-sizing: border-box;
+}
+
+/* This is our style for the invalid fields */
+input:invalid {
+  border-color: #900;
+  background-color: #fdd;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+/* This is the style of our error messages */
+.error,
+.error1,
+.error2 {
+  width: 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
+
+#Country {
+  /* appearance: none; */
+  background-color: white;
+  height: 21px;
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+
+#ZIP {
+  appearance: none;
+  display: block;
+}
+
+.error2 {
+  margin-bottom: 10px;
+}
+
+button {
+  margin: 0 auto;
+}
+
+/* form {
+  font: 1em sans-serif;
+  max-width: 320px;
+}
+
+p > label {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset {
+  width: 100%;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}
+ */
